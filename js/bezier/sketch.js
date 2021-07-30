@@ -11,6 +11,8 @@ let x_center = canvas_width / 2;
 
 let L_span = 50;
 let base_height = 150;
+let clearance = 30;
+let alpha = 20;
 
 let x_scaling_factor = L_span / 200;
 let y_scaling_factor = base_height / 500;
@@ -20,18 +22,22 @@ let draw_scale = 3;
 let cp = [
   [x_center - L_span, base_height],
   [x_center - L_span - 80.5*x_scaling_factor, base_height],
-  [x_center - L_span - 100*x_scaling_factor, base_height - 138.9*y_scaling_factor],
-  [x_center - L_span - 100*x_scaling_factor, base_height - 138.9*y_scaling_factor],
-  [x_center - L_span - 100*x_scaling_factor, base_height - 138.9*y_scaling_factor],
-  [x_center, base_height - 138.9*y_scaling_factor],
-  [x_center, base_height - 138.9*y_scaling_factor],
-  [x_center, base_height - 178.6*y_scaling_factor],
-  [x_center + L_span + 103.2*x_scaling_factor, base_height - 178.6*y_scaling_factor],
-  [x_center + L_span + 103.2*x_scaling_factor, base_height - 178.6*y_scaling_factor],
+  [x_center - L_span - 100*x_scaling_factor, base_height - 138.9*y_scaling_factor - clearance],
+  [x_center - L_span - 100*x_scaling_factor, base_height - 138.9*y_scaling_factor - clearance],
+  [x_center - L_span - 100*x_scaling_factor, base_height - 138.9*y_scaling_factor - clearance],
+  [x_center, base_height - 138.9*y_scaling_factor - clearance],
+  [x_center, base_height - 138.9*y_scaling_factor - clearance],
+  [x_center, base_height - 178.6*y_scaling_factor - clearance],
+  [x_center + L_span + 103.2*x_scaling_factor, base_height - 178.6*y_scaling_factor - clearance],
+  [x_center + L_span + 103.2*x_scaling_factor, base_height - 178.6*y_scaling_factor - clearance],
   [x_center + L_span + 82.6*x_scaling_factor, base_height],
-  [x_center + L_span, base_height],
+  [x_center + L_span, base_height]
 ];
 
+// let cp = [[x_center + L_span, base_height], [x_center, base_height + alpha], [x_center - L_span, base_height]];
+
+
+// let cp = [[50,50], [80,200], [500, 500], [700, 20]];
 let path_history = [];
 
 function setup() {
